@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+              {% for i in designation %}
+                <img src="{{i.photo.url}}" alt="" width="100%">
+              {% endfor %}
+              <br><br>
+              {% for i in personal %}
+                <h6>Email:{{i.email}}</h6>
+                <h6>Phone:{{i.phone}}</h6>
+              {% endfor %}
+
+              {% for i in designation %}
+              <ul>
+                <li>{{i.skills}}</li>
+              </ul>
+            {% endfor %}
+            </div>
+
+            
+            <div class="col-md-9">
+              {% for i in personal %}
+                <h1>{{i.firstname}} {{i.lastname}}</h1>
+              {% endfor %}
+
+              {% for i in designation %}
+                <h3>{{i.role}}</h3>
+              {% endfor %}
+
+              <br><br>
+              {% for i in personal %}
+                <h5>Gender : {{i.gender}}</h5>
+                <h5>DOB : {{i.dob}}</h5>
+              {% endfor %}
+
+              <br><br>
+              {% for i in education %}
+                <table class="table">
+                  <tr>
+                    <th>Graduation</th>
+                    <th>12<sup>th</sup></th>
+                    <th>10<sup>th</sup></th>
+                  </tr>
+
+                  <tr>
+                    <td>{{i.graduation}}</td>
+                    <td>{{i.higher}}</td>
+                    <td>{{i.secondary}}</td>
+                  </tr>
+
+                  <tr>
+                    <td>{{i.degreemarks}}</td>
+                    <td>{{i.highermarks}}</td>
+                    <td>{{i.secondarymarks}}</td>
+                  </tr>
+
+                  <tr>
+                    <td>{{i.degreedate}}</td>
+                    <td>{{i.higherdate}}</td>
+                    <td>{{i.secondarydate}}</td>
+                  </tr>
+                </table>
+              {% endfor %}
+
+              <br><br>
+              {% for i in residence %}
+                <p>State : {{i.state}}</p>
+                <p>City : {{i.city}}</p>
+                <p>PIN : {{i.pin}}</p>
+                <p>Address : {{i.address}}</p>
+              {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
